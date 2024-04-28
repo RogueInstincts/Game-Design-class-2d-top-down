@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bevb7i14llh7u"]
+
+[ext_resource type="Script" path="res://enemy_sword.gd" id="1_uwcid"]
+[ext_resource type="Texture2D" uid="uid://ctgfxvkml10jq" path="res://enemy_sword.png" id="2_fgswv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggc1m"]
+size = Vector2(4, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx1tp"]
+size = Vector2(8, 19)
+
+[node name="enemy sword" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_uwcid")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_fgswv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ggc1m")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_fx1tp")
