@@ -5,23 +5,30 @@ extends CharacterBody2D
 @onready var sword_timer = 0
 @onready var facing = Vector2(1,0)
 @onready var sword
+@onready var shield = $Shield
 
 const SPEED = 300.0
+
+func is_facing_enemy(attack_position: Vector2):
+	var facing_direction = sign(shield.global_position - global_position)
+	var hit_direction = sign(global_position - attack_position)
+	#print(facing_direction)
+	#print(hit_direction)
+	return (hit_direction.x != facing_direction.x) and (hit_direction.y != facing_direction.y)
 
 func sword_hit(i):
 	pass
 
 func enemy_sword_hit(i):
-	damage()
+	damage(i.transform.origin)
 	i.queue_free()
 
-func damage():
-	if damage_timer <= 0:
+func damage(i):
+	if damage_timer <= 0 and not is_facing_enemy(i):
 		world.health -= 1
 		damage_timer = 50
 
 func _physics_process(_delta):
-	
 	if Input.is_action_just_pressed("attack") and sword_timer <= 0:
 		sword = load("res://sword.tscn").instantiate()
 		var t = Transform2D()

@@ -51,7 +51,7 @@ func _physics_process(delta):
 	
 	for i in hitbox.get_overlapping_bodies():
 		if i == player:
-			i.damage()
+			i.damage(transform.origin)
 	
 	var makesword = randi() % 150
 	if makesword == 1:
