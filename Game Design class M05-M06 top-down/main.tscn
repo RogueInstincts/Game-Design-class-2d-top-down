@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://86tff54ukvcn"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_347tu"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_347tu")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 240.0
+offset_bottom = 123.0
+text = "Oh no! The bullies stole Billy's dog!
+
+Armed with a trash can lid for a shield and a stick for a sword, Billy needs to fight off the bullies 
+so they will give his dog back and stop trying to take his lunch money"
+
+[node name="controls" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 500.0
+offset_right = 1135.0
+offset_bottom = 575.0
+text = "Controls:
+WASD or arrow keys to move
+SPACE  to attack"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 500.0
+offset_right = 676.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 25
+text = "Start Game"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8tgy5dh3irup"]
+[gd_scene load_steps=26 format=3 uid="uid://c8tgy5dh3irup"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_mrhsc"]
 [ext_resource type="Texture2D" uid="uid://b67ck4s1gt4h7" path="res://background_dirt.png" id="1_rmt2g"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://exit1.gd" id="4_xn2r2"]
 [ext_resource type="Script" path="res://exit2.gd" id="6_ihjt7"]
 [ext_resource type="Script" path="res://exit3.gd" id="7_57o1m"]
+[ext_resource type="Texture2D" uid="uid://heqplhdrbfjl" path="res://coin.png" id="8_1453x"]
 [ext_resource type="Script" path="res://exit4.gd" id="8_daoh6"]
 [ext_resource type="Script" path="res://exit5.gd" id="9_ep37h"]
 [ext_resource type="Script" path="res://exit6.gd" id="10_85wpb"]
@@ -3187,16 +3188,28 @@ position = Vector2(431, 35)
 texture = ExtResource("13_ukom8")
 
 [node name="Sword" type="Sprite2D" parent="Camera/hud"]
-position = Vector2(334, 35)
+position = Vector2(318, 35)
 texture = ExtResource("16_03mcl")
 
-[node name="Label" type="Label" parent="Camera/hud"]
+[node name="swordlabel" type="Label" parent="Camera/hud"]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 23.0
-offset_right = 325.0
-offset_bottom = 46.0
+offset_left = 184.0
+offset_top = 25.0
+offset_right = 309.0
+offset_bottom = 48.0
 text = "weapon (space):"
+
+[node name="Coin" type="Sprite2D" parent="Camera/hud"]
+position = Vector2(41, 35)
+texture = ExtResource("8_1453x")
+
+[node name="coinlabel" type="Label" parent="Camera/hud"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 25.0
+offset_right = 95.0
+offset_bottom = 48.0
+text = "X 0"
 
 [node name="exits" type="Node" parent="."]
 

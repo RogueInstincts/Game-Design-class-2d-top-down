@@ -13,6 +13,8 @@ const SPEED = 100.0
 func sword_hit(i):
 	queue_free()
 	i.queue_free()
+	world.generate_loot(transform.origin)
+	world.kills_to_win -= 1
 
 func enemy_sword_hit(i):
 	pass
